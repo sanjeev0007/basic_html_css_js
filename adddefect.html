@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style1.css">
+<script type="text/javascript">
+	function form_validate()
+{
+	var defectname= document.forms["myform"]["defectName"].value;
+	var defectid= document.forms["myform"]["DefectID"].value;
+			if(defectname=='')
+			{
+				alert("Defect Name must be filled out");
+				return false;
+			}
+			else{			
+			if(defectid=='')
+			{
+				alert("Defect ID must be filled out");
+				return false;
+			}
+			else
+			{
+				alert("Success!");
+				
+			}}
+}
+
+</script>
+
+
+</head>
+
+<body>
+	<div class="login-box" name="lg"> 
+		<h1> Add Defect </h1>
+			<form onsubmit="return form_validate()" name="myform">
+				<div class="textbox" >
+					<input type="text" placeholder="DefectName" name="defectName" value="" required>
+				</div>
+
+				<div class="textbox" >
+					<input type="text" placeholder="DefectID" name="DefectID" value="" required>
+				</div>
+
+				<input class="button" type="submit" value="Add Defect" onclick="return form_validate()" >
+			</form>
+	</div>
+
+
+</body>
+</html>

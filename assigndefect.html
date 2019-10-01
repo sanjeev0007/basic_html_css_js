@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assign Defect</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style1.css">
+<script type="text/javascript">
+	function form_validate()
+{
+	var DefectName= document.forms["myform"]["DefectName"].value;
+			if(DefectName=='')
+			{
+				alert("Name must be filled out");
+				return false;
+			}
+			var defectid= document.forms["myform"]["DefectID"].value;
+			if(defectid=='')
+			{
+				alert("Password must be filled out");
+				return false;
+			}
+			var username= document.forms["myform"]["User Name"].value;
+			if(username=='')
+			{
+				alert("Password must be filled out");
+				return false;
+			}
+			else
+			{
+				alert("Success!");
+				
+			}
+}
+
+</script>
+
+
+</head>
+
+<body>
+	<div class="login-box" name="lg"> 
+		<h1> Assign Defect </h1>
+			<form onsubmit="return form_validate()" name="myform">
+				<div class="textbox" >
+					<input type="text" placeholder="DefectName" name="DefectName" value="" required>
+				</div>
+
+				<div class="textbox" >
+					<input type="text" placeholder="DefectID" name="DefectID" value="" required>
+				</div>
+
+				<div class="textbox" >
+					<input type="text" placeholder="User Name" name="User Name" value="" required>
+				</div>
+
+				<input class="button" type="submit" value="Assign Defect" onclick="return form_validate()" >
+			</form>
+	</div>
+
+
+</body>
+</html>

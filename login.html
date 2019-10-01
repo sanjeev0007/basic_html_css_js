@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LOGIN</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+	function form_validate()
+{
+	var drop= document.forms["myform"]["user-type"].value;
+	var Atm Card no= document.forms["myform"]["Atm"].value;
+	var password= document.forms["myform"]["password"].value;
+	
+		if(drop=="Admin")
+		{		
+			
+				if(Atm=='')
+				{
+					alert("Name must be filled out");
+					return false;
+				}	
+				else if(Atm=="Admin")
+				{
+					
+					if(password=='')
+					{
+						alert("Password must be filled out");
+						return false;
+					}
+					else if(password!="IIIT")
+					{
+						alert("Invalid ID or Password");
+					}
+					else 
+					{
+						alert("Success!");
+
+							window.open('admin.html');
+					}
+				}
+				else
+				{
+					alert("Invalid ID or Password");
+				}
+		}
+		else
+		{
+			
+				if(Atm=='')
+				{
+					alert("Name must be filled out");
+					return false;
+				}	
+				else if(Atm=="User")
+				{
+					
+					if(password=='')
+					{
+						alert("Password must be filled out");
+						return false;
+					}
+					else if(password!="IIIT")
+					{
+						alert("Invalid ID or Password");
+					}
+					else 
+					{
+						alert("Welcome "+Atm+"!");
+
+							window.open('user.html');
+					}
+				}
+				else
+				{
+					alert("Invalid ID or Password");
+				}
+		}
+	}
+	
+
+</script>
+
+
+</head>
+
+<body>
+	<div class="login-box" name="lg"> 
+		<h1> LOGIN </h1>
+			<form onsubmit="return form_validate()" name="myform">
+				
+				<div class="drop-box">
+					<select name="user-type" id="user-type">
+						<option value="Admin">Admin</option>
+	    				<option value="User">User</option>
+					</select>
+				</div>
+
+				<div class="textbox" >
+					<input type="text" placeholder="Atm" name="Atm" value="" required>
+				</div>
+
+				<div class="textbox">
+					<input type="password" placeholder="password" name="password" value="" required>
+				</div>
+
+				<input class="button" type="submit" value="Sign in" >
+			</form>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add User</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style1.css">
+<script type="text/javascript">
+	function validateform()
+			{
+				//User ID
+				var i=document.forms["My"]["ID"].value;
+				var ir = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{2}$/;
+				//Password
+				var p=document.forms["My"]["Pass"].value;
+				var pr = p.length
+				//ConfirmPassword
+				var cp=document.forms["My"]["RPass"].value;
+				//FirstName
+				var fn=document.forms["My"]["FN"].value;
+				var fnr = /[A-Za-z]{3,}/
+				//Email
+				var em=document.forms["My"]["email"].value;
+				var emr = /([A-Za-z0-9_\-\.]{2,})+\@([A-Za-z0-9_\-\.]{2,})+\.([A-Za-z]{2,3})$/
+				//Phone Number
+				var po=document.forms["My"]["Ph"].value;
+				var por = /([6-9]{1})+([0-9]{9})$/
+						
+					if (fn == "")
+					{
+						alert("Name must be filled");
+						document.forms["My"]["FN"].focus();
+						return false;
+					}
+					else
+					if (fnr.test(fn) == false)
+					{
+						alert("Enter Name properly");
+						document.forms["My"]["FN"].focus();
+						return false;
+					}
+					else
+					if (i == "")
+					{
+						alert("User Id must be filled");
+						document.forms["My"]["ID"].focus();
+						return false;
+					}
+					else
+					if (ir.test(i) == false)
+					{
+						alert("Enter Correct User ID");
+						document.forms["My"]["ID"].focus();
+						return false;
+					}
+					else
+					if (p == "")
+					{
+						alert("Password must be filled");
+						document.forms["My"]["Pass"].focus();
+						return false;
+					}
+					else
+					if (pr<5||pr>12)
+					{
+						alert("Password must be between 5-12 characters");
+						document.forms["My"]["Pass"].focus();
+						return false;
+					}
+					else
+					if (cp == "")
+					{
+						alert("Confirm Password must be filled");
+						document.forms["My"]["RPass"].focus();
+						return false;
+					}
+
+					else
+					if (cp != p)
+					{
+						alert("Confirm Password does not match the entered Password");
+						document.forms["My"]["Pass"].focus();
+						return false;
+					}
+					else				
+					if (em == "")
+					{
+						alert("Email Id must be filled");
+						document.forms["My"]["email"].focus();
+						return false;
+					}
+					else
+					if (emr.test(em) == false)
+					{
+						alert("Enter Correct email ID");
+						document.forms["My"]["email"].focus();
+						return false;
+					}
+					else
+					if (po == "")
+					{
+						alert("Phone Number must be filled");
+						document.forms["My"]["Ph"].focus();
+						return false;
+					}
+					else
+					if (por.test(po) == false)
+					{
+						alert("Enter Correct Phone Number");
+						document.forms["My"]["Ph"].focus();
+						return false;
+					}
+					else
+					{
+						alert("User Added!");
+						return true;
+					}
+					
+			}
+	
+
+</script>
+
+
+</head>
+
+<body>
+	<div class="login-box" name="lg"> 
+		<h1> Add User </h1>
+		<form name="My" onsubmit="return validateform()" align="center">
+			<div class="textbox"> 
+			<input type="text" placeholder="Name" name="FN"> </div>
+			<br>
+			<div class="textbox"> 
+			<input type="text" placeholder="User Id" name="ID"> </div>
+			<br>
+			<div class="textbox"> 
+			<input type="password" placeholder="Password" name="Pass"> </div>
+			<br>
+			<div class="textbox"> 
+			<input type="password" placeholder="Re-enter your Password" name="RPass"> </div>
+			<br>		
+			<div class="textbox">
+			<input type="text" placeholder="E-mail" name="email"> </div>
+			<br>
+			<div class="textbox"> 
+			<input type="text" placeholder="Phone No." name="Ph"> </div>
+			<br>
+			<div class="drop-box">
+					<select name="gender" >
+						<option value="Male">Male</option>
+	    				<option value="Female">Female</option>
+					</select>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+
+			<input class="button" type="submit" value="Add User"  > 
+
+			
+
+</body>
+</html>
